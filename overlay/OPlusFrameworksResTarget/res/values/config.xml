@@ -433,10 +433,10 @@
          Note that a physical cutout should be configured in pixels for the best results.
          -->
     <string translatable="false" name="config_mainBuiltInDisplayCutout">
-        M 154,83
-        M 111,83
-        A 43,43 0 1,0 197,83
-        A 43,43 0 1,0 111,83
+        M -540,0
+        L -540,96
+        L -375,96
+        L -375,0
         Z
         @left
     </string>
@@ -448,14 +448,18 @@
          config_mainBuiltInDisplayCutout
          -->
     <string translatable="false" name="config_mainBuiltInDisplayCutoutRectApproximation">
-        M 0,0
-        H 236
-        V 152
-        H 0
+        M -720,0
+        L -720,128
+        L -500,128
+        L -500,0
         Z
         @left
     </string>
 
+     <integer name="config_attentionMaximumExtension">12000000</integer>
+     <integer name="config_stableDeviceDisplayHeight">3216</integer>
+     <integer name="config_stableDeviceDisplayWidth">1440</integer>
+     
     <!-- Whether the display cutout region of the main built-in display should be forced to
          black in software (to avoid aliasing or emulate a cutout that is not physically existent).
          -->
