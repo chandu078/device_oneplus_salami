@@ -11,10 +11,17 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 # Inherit from salami device
 $(call inherit-product, device/oneplus/salami/device.mk)
 
-# Inherit some common Lineage stuff.
-$(call inherit-product, vendor/lineage/config/common_full_phone.mk)
+# Inherit some common Nameless-AOSP stuff.
+$(call inherit-product, vendor/aosp/config/common_full_phone.mk)
 
-PRODUCT_NAME := lineage_salami
+# Boot Animation
+TARGET_BOOT_ANIMATION_RES := 1080
+
+# Official
+CUSTOM_BUILD_TYPE := Official
+
+# Device identifier. This must come after all inclusions.
+PRODUCT_NAME := aosp_salami
 PRODUCT_DEVICE := salami
 PRODUCT_MANUFACTURER := OnePlus
 PRODUCT_BRAND := OnePlus
@@ -26,8 +33,5 @@ PRODUCT_SYSTEM_DEVICE := OP594DL1
 PRODUCT_GMS_CLIENTID_BASE := android-oneplus
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
-    PRIVATE_BUILD_DESC="CPH2449-user 13 TP1A.220905.001 T.R4T3.110730f_335df-2 release-keys" \
     TARGET_DEVICE=$(PRODUCT_SYSTEM_DEVICE) \
     TARGET_PRODUCT=$(PRODUCT_SYSTEM_NAME)
-
-BUILD_FINGERPRINT := OnePlus/CPH2449/OP594DL1:13/TP1A.220905.001/T.R4T3.110730f_335df-2:user/release-keys
